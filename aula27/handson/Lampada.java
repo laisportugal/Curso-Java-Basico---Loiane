@@ -12,18 +12,28 @@ public class Lampada {
 	String[] tipos;
 	boolean ligada;
 
-		
-	void ligarLampada(){
-		boolean ligada = true;
-		System.out.println("A lampada está ligada");
+	void ligar() {
+		ligada = true;
 	}
-	
-	void desligarLampada(){
-		boolean ligada = false;
-		System.out.println("A lampada está desligada");
+
+	void desligar() {
+		ligada = false;
 	}
-	
-	
+
+	void mostrarEstado() {
+		if (ligada) {
+			System.out.println("lampada está ligada");
+		} else {
+			System.out.println("lampada está desligada");
+		}
+	}
+
+	void mudarEstado() {
+		if (ligada) {
+			desligar();
+		} else {
+			ligar();
+		}
+	}
 
 }
-
