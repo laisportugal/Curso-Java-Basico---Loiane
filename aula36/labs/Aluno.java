@@ -5,7 +5,15 @@ import java.util.Scanner;
 public class Aluno {
 	private String nome;
 	private String matricula;
-	private int[] notas;
+	private double[] notas;
+	public double[] getNotas() {
+		return notas;
+	}
+
+	public void setNotas(double[] notas) {
+		this.notas = notas;
+	}
+
 	Scanner scan = new Scanner(System.in);
 	private boolean aprovado;
 
@@ -33,32 +41,35 @@ public class Aluno {
 		this.matricula = matricula;
 	}
 
-	public int[] getNotas() {
-		return notas;
-	}
+	
+	public String obterInfo() {
 
-	public void setNotas(int[] notas) {
-		this.notas = notas;
-	}
+		String info = "Nome Aluno = " + nome + "; ";
+		info += "Matricula = " + matricula + "; ";
+		info += "Notas: ";
 
-	public double media(double media, double soma) {
-
-		for (int i = 0; i < notas.length; i++) {
-			System.out.println("Digite a nota " + i);
-			soma = soma + notas[i];
+		double soma = 0;
+		for (double nota : notas) {
+			soma += nota;
+			info += nota + " ";
 		}
-		media = soma / notas.length;
-		System.out.println("A média do aluno é" + media);
-
+		double media = soma / 4;
+		info += "\n" + "Média = " + media + " - ";
 		if (media >= 7) {
-			setAprovado(true);
-			System.out.println("Aluno aprovado");
+			info += "Aprovado!";
 		} else {
-			setAprovado(false);
-			System.out.println("Aluno reprovado");
-
+			info += "Reprovado!";
 		}
-		return media;
+
+		return info;
+	}
+
+	public double obterMedia() {
+		double soma = 0;
+		for (double nota : notas) {
+			soma += nota;
+		}
+		return soma / 4;
 	}
 	
 	
