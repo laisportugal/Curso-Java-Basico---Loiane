@@ -21,30 +21,28 @@ public class PessoaFisica extends Contribuinte {
 		this.aliquota = aliquota;
 	}
 
+	
 	public double calcularImpostoPessoaFisica(double rendaBruta) {
 		double calculoImposto;
-		
+
 		if (rendaBruta <= 0) {
 			return 0;
 		} else if ((rendaBruta > 1400) && (rendaBruta <= 2100)) {
-			setAliquota(0.1);
-			setParcelaDeduzir(100);
-			calculoImposto = (rendaBruta * aliquota) - parcelaDeduzir;
+			calculoImposto = calcularImposto(rendaBruta, 0.1, 100);
 		} else if ((rendaBruta > 2100) && (rendaBruta <= 2800)) {
-			setAliquota(0.15);
-			setParcelaDeduzir(270);
-			calculoImposto = (rendaBruta * aliquota) - parcelaDeduzir;
+			calculoImposto = calcularImposto(rendaBruta, 0.15, 270);
 		} else if ((rendaBruta > 2800) && (rendaBruta <= 3600)) {
-			setAliquota(0.25);
-			setParcelaDeduzir(500);
-			calculoImposto = (rendaBruta * aliquota) - parcelaDeduzir;
+			calculoImposto = calcularImposto(rendaBruta, 0.25, 500);
+
 		} else {
-			setAliquota(0.30);
-			setParcelaDeduzir(700);
-			calculoImposto = (rendaBruta * aliquota) - parcelaDeduzir;
+			calculoImposto = calcularImposto(rendaBruta, 0.30, 700);
 		}
-	
+
 		return calculoImposto;
+	}
+
+	private double calcularImposto(double rendaBruta, double Aliquota, double ParcelaReduzir) {
+		return (rendaBruta * aliquota) - parcelaDeduzir;
 	}
 
 }
