@@ -1,14 +1,13 @@
 package com.loiane.cursojava.aula43;
 
 public class PessoaJuridica extends Contribuinte {
-	
-	double rendaEmpresa;
 
-	public double getRendaEmpresa() {
-		return rendaEmpresa;
-	}
-
-	public void setRendaEmpresa(double rendaEmpresa) {
-		this.rendaEmpresa = rendaEmpresa;
+	public double calcularImpostoPessoaJuridica(double rendaEmpresa) throws NullPointerException {
+		if (rendaEmpresa != 0) {
+			valorImposto = rendaEmpresa * 0.1;
+		} else {
+			System.out.println("Valor incorreto");
+		}
+		return valorImposto;
 	}
 }
