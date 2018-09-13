@@ -18,15 +18,5 @@ public class Figura3D extends FiguraGeometrica implements DimensaoSuperficial, D
 		this.volume = volume;
 	}
 	
-	@Override
-	public void calcularVolume() {
-		// TODO Auto-generated method stub
-		
-	}
-	@Override
-	public void calcularArea() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
