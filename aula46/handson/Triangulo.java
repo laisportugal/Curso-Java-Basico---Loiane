@@ -2,6 +2,7 @@ package aula46.handson;
 
 public class Triangulo extends Figura2D {
 	public double base;
+	public double altura;
 
 	public double getBase() {
 		return base;
@@ -19,10 +20,8 @@ public class Triangulo extends Figura2D {
 		this.altura = altura;
 	}
 
-	public double altura;
-
 	@Override
-	public void calcularArea() {
-		area = (base * altura) / 2;
+	public double calcularArea() {
+		return area = (base * altura) / 2;
 	}
 }
