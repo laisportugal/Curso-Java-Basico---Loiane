@@ -4,8 +4,16 @@ public class Quadrado extends Figura2D {
 
 	public double medidaLadoEmCm;
 
-	public double calculaArea() {
-		area = Math.pow(medidaLadoEmCm, 2);
-		return area;
+	public double getMedidaLadoEmCm() {
+		return medidaLadoEmCm;
+	}
+
+	public void setMedidaLadoEmCm(double medidaLadoEmCm) {
+		this.medidaLadoEmCm = medidaLadoEmCm;
+	}
+
+	@Override
+	public double calcularArea() {
+		return area = Math.pow(medidaLadoEmCm, 2);
 	}
 }
